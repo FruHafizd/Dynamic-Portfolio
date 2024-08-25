@@ -44,13 +44,13 @@
                 </a>
                 
                 <div :class="{'flex': showMenu, 'hidden md:flex': !showMenu }" class="absolute z-50 flex-col items-center justify-center w-full h-auto px-4 text-center text-gray-400 -translate-x-1/2 border-2 border-gray-700 rounded-full md:border md:w-auto md:h-12 left-1/2 md:flex-row md:items-center">
-                    <a href="#" class="relative inline-block w-full h-full px-8 py-4 mx-2 font-medium leading-tight text-center text-white md:py-2 group md:w-auto md:px-4 lg:mx-4 md:text-center">
+                    <a href="/" class="{{ request()->is('/') ? 'relative inline-block w-full h-full px-8 py-4 mx-2 font-medium leading-tight text-center text-white md:py-2 group md:w-auto md:px-4 lg:mx-4 md:text-center' : 'relative inline-block w-full h-full px-8 py-4 mx-2 font-medium leading-tight text-center duration-300 ease-out md:py-2 group hover:text-white md:w-auto md:px-4 lg:mx-4 md:text-center'}}" wire:navigate>
                         <span class="text-xl">Home</span>
-                        <span class="absolute bottom-0 left-0 w-full h-px duration-300 ease-out translate-y-px bg-gradient-to-r md:from-gray-700 md:via-gray-400 md:to-gray-700 from-gray-900 via-gray-600 to-gray-900"></span>
+                        <span class="{{ request()->is('/') ? 'absolute bottom-0 left-0 w-full h-px duration-300 ease-out translate-y-px bg-gradient-to-r md:from-gray-700 md:via-gray-400 md:to-gray-700 from-gray-900 via-gray-600 to-gray-900' : 'absolute bottom-0 w-0 h-px duration-300 ease-out translate-y-px group-hover:left-0 left-1/2 group-hover:w-full bg-gradient-to-r md:from-gray-700 md:via-gray-400 md:to-gray-700 from-gray-900 via-gray-600 to-gray-900' }}"></span>
                     </a>
-                    <a href="#" class="relative inline-block w-full h-full px-8 py-4 mx-2 font-medium leading-tight text-center duration-300 ease-out md:py-2 group hover:text-white md:w-auto md:px-4 lg:mx-4 md:text-center">
+                    <a href="/about" class="{{ request()->is('about') ? 'relative inline-block w-full h-full px-8 py-4 mx-2 font-medium leading-tight text-center text-white md:py-2 group md:w-auto md:px-4 lg:mx-4 md:text-center' : 'relative inline-block w-full h-full px-8 py-4 mx-2 font-medium leading-tight text-center duration-300 ease-out md:py-2 group hover:text-white md:w-auto md:px-4 lg:mx-4 md:text-center'}}"wire:navigate>
                         <span class="text-xl">About</span>
-                        <span class="absolute bottom-0 w-0 h-px duration-300 ease-out translate-y-px group-hover:left-0 left-1/2 group-hover:w-full bg-gradient-to-r md:from-gray-700 md:via-gray-400 md:to-gray-700 from-gray-900 via-gray-600 to-gray-900"></span>
+                        <span class="{{ request()->is('about') ? 'absolute bottom-0 left-0 w-full h-px duration-300 ease-out translate-y-px bg-gradient-to-r md:from-gray-700 md:via-gray-400 md:to-gray-700 from-gray-900 via-gray-600 to-gray-900' : 'absolute bottom-0 w-0 h-px duration-300 ease-out translate-y-px group-hover:left-0 left-1/2 group-hover:w-full bg-gradient-to-r md:from-gray-700 md:via-gray-400 md:to-gray-700 from-gray-900 via-gray-600 to-gray-900' }}"></span>
                     </a>
                     <a href="#" class="relative inline-block w-full h-full px-8 py-4 mx-2 font-medium leading-tight text-center duration-300 ease-out md:py-2 group hover:text-white md:w-auto md:px-4 lg:mx-4 md:text-center">
                         <span class="text-xl">Project</span>

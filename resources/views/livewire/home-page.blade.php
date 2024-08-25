@@ -2,14 +2,14 @@
     <section class="flex flex-col lg:flex-row items-start justify-start w-full px-4 md:px-8 lg:px-16 space-y-12 lg:space-y-0 pt-16 md:pt-24">
         <!-- Text content -->
         <div class="text-left space-y-6 lg:w-1/2">
-            <h3 class="text-4xl font-semibold">Hi There👋</h3>
-            <h1 class="text-8xl font-extrabold">Muhammad Hafizd</h1>
+            <h3 class="text-4xl font-semibold">{{ $home_pages->text_content }}</h3>
+            <h1 class="text-8xl font-extrabold">{{ $home_pages->name }}</h1>
 
             <!-- Typing animation section -->
             <div 
                 x-data="{
                     text: '',
-                    textArray: ['Junior Web Developer', 'Full Stack Learner 🚀', 'Coding Enjoyer'],
+                    textArray: ['Junior Web Developer', 'Full Stack Learner 🚀', 'Coding Enjoyer' ],
                     textIndex: 0,
                     charIndex: 0,
                     typeSpeed: 110,
@@ -68,18 +68,19 @@
             </div>
 
             <p class="text-xl max-w-3xl font-semibold text-gray-300 leading-relaxed">
-                I am a passionate 18-year-old Junior Web Developer committed to daily growth and continuous learning. Always eager to tackle new challenges and push my boundaries, I strive to make a positive impact through my work and creativity. 
+                {{ $home_pages->description }}
             </p>            
 
             <!-- Button section -->
             <section class="w-full text-left">
-                <a href="/about" class="inline-block px-6 py-3 text-lg font-semibold bg-slate-200 text-black rounded-lg hover:bg-slate-400 transition">Learn More</a>
+                <a href="/about" class="inline-block px-6 py-3 text-lg font-semibold bg-slate-200 text-black rounded-lg hover:bg-slate-400 transition">{{ $home_pages->button_page }}</a>
             </section>
         </div>
         
         <div class="lg:w-1/2 flex items-center justify-center">
             <div class="relative w-[500px] h-[500px] lg:w-[500px] lg:h-[500px] overflow-hidden rounded-full border-4 border-white">
-                <img src="{{ asset('storage/profiles/FruHafizd.jpg') }}" alt="Profile Image" class="w-full h-full object-cover object-top">
+                <img src="{{ url('storage', $home_pages->images)  }}" alt="Profile Image" class="w-full h-full object-cover object-top">
+                
                 <div class="absolute inset-0 rounded-full border-2 border-white blur-md opacity-50"></div>
             </div>
         </div>
