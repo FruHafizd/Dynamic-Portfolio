@@ -38,6 +38,10 @@ class AboutPageResource extends Resource
                         Forms\Components\TextInput::make('button_page')
                             ->required()
                             ->maxLength(255),
+                        Forms\Components\TextInput::make('above_header')
+                            ->required()
+                            ->columnSpanFull()
+                            ->maxLength(255),
                         MarkdownEditor::make('description')
                             ->columnSpanFull()
                             ->fileAttachmentsDirectory('products'),
@@ -61,13 +65,31 @@ class AboutPageResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('text_content')
+                ->searchable(),
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('button_page')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('above_header')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('description')
+                    ->limit(25)
+                    ->sortable(),
+                Tables\Columns\ImageColumn::make('images'),
+
+                Tables\Columns\IconColumn::make('is_active')
+                    ->boolean(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                \Filament\Tables\Actions\ActionGroup::make([
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                ])
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

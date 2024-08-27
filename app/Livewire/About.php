@@ -7,7 +7,13 @@ use Livewire\Component;
 class About extends Component
 {
     public function render()
-    {
-        return view('livewire.about');
+    {   
+        $aboutQuery = \App\Models\AboutPage::query()->where('is_active',1)->first();
+        $skillQuery = \App\Models\Skill::query()->where('is_active',1)->get();
+
+        return view('livewire.about',[
+            'about_pages' => $aboutQuery,
+            'skill' => $skillQuery,
+        ]);
     }
 }

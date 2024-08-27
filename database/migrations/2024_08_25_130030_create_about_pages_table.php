@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('images')->nullable();
             $table->longText('description')->nullable();
             $table->string('button_page');
+            $table->string('above_header');
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });

@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('skills', function (Blueprint $table) {
             $table->id();
-            $table->string('header');
             $table->longText('icon_svg');
             $table->string('text_content');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
