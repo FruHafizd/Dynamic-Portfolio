@@ -109,7 +109,7 @@
                 }, 5);
             "
             class="invisible text-white text-4xl font-bold custom-font">
-                {{ $about_pages->above_header}}
+                {{ $about_pages->above_header}} 
             </h1>
         </a>
     </div>
