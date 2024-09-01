@@ -66,11 +66,6 @@
     </div>
     
    
-
-   
-    
-
-
     <br>
     <div class="relative flex items-center justify-center w-full mx-auto font-medium md:h-3">
         <a class="flex items-center justify-center w-full py-6 pl-8 pr-6 space-x-2 font-extrabold text-white">
