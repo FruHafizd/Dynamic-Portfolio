@@ -56,9 +56,9 @@
                         <span class="text-xl">Projects</span>
                         <span class="{{ request()->is('project') ? 'absolute bottom-0 left-0 w-full h-px duration-300 ease-out translate-y-px bg-gradient-to-r md:from-gray-700 md:via-gray-400 md:to-gray-700 from-gray-900 via-gray-600 to-gray-900' : 'absolute bottom-0 w-0 h-px duration-300 ease-out translate-y-px group-hover:left-0 left-1/2 group-hover:w-full bg-gradient-to-r md:from-gray-700 md:via-gray-400 md:to-gray-700 from-gray-900 via-gray-600 to-gray-900' }}"></span>
                     </a>
-                    <a href="#" class="relative inline-block w-full h-full px-8 py-4 mx-2 font-medium leading-tight text-center duration-300 ease-out md:py-2 group hover:text-white md:w-auto md:px-4 lg:mx-4 md:text-center">
-                        <span class="text-xl">Contact</span>
-                        <span class="absolute bottom-0 w-0 h-px duration-300 ease-out translate-y-px group-hover:left-0 left-1/2 group-hover:w-full bg-gradient-to-r md:from-gray-700 md:via-gray-400 md:to-gray-700 from-gray-900 via-gray-600 to-gray-900"></span>
+                    <a href="/contact" class="{{ request()->is('contact') ? 'relative inline-block w-full h-full px-8 py-4 mx-2 font-medium leading-tight text-center text-white md:py-2 group md:w-auto md:px-4 lg:mx-4 md:text-center' : 'relative inline-block w-full h-full px-8 py-4 mx-2 font-medium leading-tight text-center duration-300 ease-out md:py-2 group hover:text-white md:w-auto md:px-4 lg:mx-4 md:text-center'}}"wire:navigate>
+                        <span class="text-xl">Contacts</span>
+                        <span class="{{ request()->is('contact') ? 'absolute bottom-0 left-0 w-full h-px duration-300 ease-out translate-y-px bg-gradient-to-r md:from-gray-700 md:via-gray-400 md:to-gray-700 from-gray-900 via-gray-600 to-gray-900' : 'absolute bottom-0 w-0 h-px duration-300 ease-out translate-y-px group-hover:left-0 left-1/2 group-hover:w-full bg-gradient-to-r md:from-gray-700 md:via-gray-400 md:to-gray-700 from-gray-900 via-gray-600 to-gray-900' }}"></span>
                     </a>
                 </div>
             </div>
