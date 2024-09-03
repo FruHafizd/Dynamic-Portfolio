@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             SkillSeeder::class,
             ProjectPage::class,
             ContactPageSeeder::class,
+            TitlePagesSeeder::class,
         ]);
 
     }

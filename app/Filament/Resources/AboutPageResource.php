@@ -32,16 +32,11 @@ class AboutPageResource extends Resource
             ->schema([
                 Group::make()->schema([
                     Section::make('Product Information')->schema([
-                        Forms\Components\TextInput::make('text_content')
-                            ->required()
-                            ->maxLength(255),
                         Forms\Components\TextInput::make('name')
                             ->required()
-                            ->maxLength(255),
+                            ->maxLength(255)
+                            ->columnSpanFull(),
                         Forms\Components\TextInput::make('button_page')
-                            ->required()
-                            ->maxLength(255),
-                        Forms\Components\TextInput::make('above_header')
                             ->required()
                             ->columnSpanFull()
                             ->maxLength(255),
@@ -69,20 +64,15 @@ class AboutPageResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('text_content')
-                ->searchable(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('button_page')
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('above_header')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('description')
                     ->limit(25)
                     ->sortable(),
                 Tables\Columns\ImageColumn::make('images')
                     ->label('Image'),
-
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean(),
             ])
