@@ -21,8 +21,11 @@ class AboutPageResource extends Resource
 {
     protected static ?string $model = AboutPage::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user-circle';
 
+    protected static ?string $navigationLabel = 'About Page';
+
+    protected static ?string $navigationGroup = 'Pages';
     public static function form(Form $form): Form
     {
         return $form
@@ -48,6 +51,7 @@ class AboutPageResource extends Resource
                     ])->columns(3),
                     Section::make('Images')->schema([
                         Forms\Components\FileUpload::make('images')
+                            ->label('Image')
                             ->directory('profiles')
                             ->maxFiles(1)
                             ->reorderable()
@@ -76,7 +80,8 @@ class AboutPageResource extends Resource
                 Tables\Columns\TextColumn::make('description')
                     ->limit(25)
                     ->sortable(),
-                Tables\Columns\ImageColumn::make('images'),
+                Tables\Columns\ImageColumn::make('images')
+                    ->label('Image'),
 
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean(),

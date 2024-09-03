@@ -20,8 +20,11 @@ class ContactPageResource extends Resource
 {
     protected static ?string $model = ContactPage::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-phone';
 
+    protected static ?string $navigationLabel = 'Contact Page';
+    
+    protected static ?string $navigationGroup = 'Pages';
     public static function form(Form $form): Form
     {
         return $form
@@ -46,9 +49,9 @@ class ContactPageResource extends Resource
     {
         return $table
             ->columns([
-            Tables\Columns\TextColumn::make('link')
-                ->sortable(),
             Tables\Columns\TextColumn::make('text_content')
+                ->sortable(),
+            Tables\Columns\TextColumn::make('link')
                 ->sortable(),
             Tables\Columns\TextColumn::make('icon_svg')
                 ->limit(25)

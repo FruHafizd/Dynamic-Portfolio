@@ -23,8 +23,11 @@ class HomePageResource extends Resource
 {
     protected static ?string $model = HomePage::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-home';
 
+    protected static ?string $navigationLabel = 'Home Page';
+
+    protected static ?string $navigationGroup = 'Pages';
     public static function form(Form $form): Form
     {
         return $form
@@ -46,6 +49,7 @@ class HomePageResource extends Resource
                 ])->columns(3),
                 Section::make('Images')->schema([
                     Forms\Components\FileUpload::make('images')
+                        ->label('Image')
                         ->directory('profiles')
                         ->maxFiles(1)
                         ->reorderable()
@@ -67,16 +71,13 @@ class HomePageResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-
                 Tables\Columns\TextColumn::make('button_page')
                     ->sortable(),
-
                 Tables\Columns\TextColumn::make('description')
                     ->limit(25)
                     ->sortable(),
-
-                Tables\Columns\ImageColumn::make('images'),
-
+                Tables\Columns\ImageColumn::make('images')
+                    ->label('Image'),
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean(),
             ])

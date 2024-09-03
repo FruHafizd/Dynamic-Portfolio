@@ -20,6 +20,9 @@ class AnimationTextResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $navigationGroup = 'Navigation';
+
+    protected static ?int $sort = 2;
     public static function form(Form $form): Form
     {
         return $form

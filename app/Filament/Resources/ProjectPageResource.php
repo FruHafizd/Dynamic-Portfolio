@@ -21,8 +21,12 @@ class ProjectPageResource extends Resource
 {
     protected static ?string $model = ProjectPage::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-queue-list';
 
+    protected static ?string $navigationLabel = 'Project Page';
+
+    protected static ?string $navigationGroup = 'Pages';
+    
     public static function form(Form $form): Form
     {
         return $form
@@ -39,6 +43,7 @@ class ProjectPageResource extends Resource
                     ])->columns(3),
                     Section::make('Images')->schema([
                         Forms\Components\FileUpload::make('images')
+                            ->label('Image')
                             ->directory('projects')
                             ->maxFiles(1)
                             ->reorderable()
@@ -61,7 +66,8 @@ class ProjectPageResource extends Resource
             Tables\Columns\TextColumn::make('decsription_project')
                 ->limit(25)
                 ->sortable(),
-            Tables\Columns\ImageColumn::make('images'),
+            Tables\Columns\ImageColumn::make('images')
+                ->label('Image'),
             Tables\Columns\IconColumn::make('is_active')
                 ->boolean(),
             ])
