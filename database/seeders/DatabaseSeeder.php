@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             AboutPageSeeder::class,
             SkillSeeder::class,
             ProjectPage::class,
+            ContactPageSeeder::class,
         ]);
-        
+
     }
 }
