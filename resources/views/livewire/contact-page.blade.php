@@ -38,7 +38,7 @@
                         }, 5);
                     "
                     class="invisible text-4xl font-bold text-white custom-font">
-                        Contact Me
+                        {{ $title_page->contact_page_header }}
                     </h1>
                 </a>
             </div>

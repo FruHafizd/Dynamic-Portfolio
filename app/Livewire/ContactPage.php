@@ -9,8 +9,10 @@ class ContactPage extends Component
     public function render()
     {
         $contactpageQuery = \App\Models\ContactPage::query()->where('is_active',1)->get();
+        $titlePageQuery =\App\Models\TitlePages::first();
         return view('livewire.contact-page',[
-            'contact' => $contactpageQuery
+            'contact' => $contactpageQuery,
+            'title_page' => $titlePageQuery,
         ]);
     }
 }
