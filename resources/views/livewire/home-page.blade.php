@@ -2,8 +2,8 @@
     <section class="flex flex-col lg:flex-row items-start justify-start w-full px-4 md:px-8 lg:px-16 space-y-12 lg:space-y-0 pt-16 md:pt-24">
         <!-- Text content -->
         <div class="text-left space-y-6 lg:w-1/2">
-            <h3 class="text-4xl font-semibold">{{ $home_pages->text_content }}</h3>
-            <h1 class="text-8xl font-extrabold">{{ $home_pages->name }}</h1>
+            <h3 class="text-4xl font-semibold">{{ $home_pages->text_content ?? 'No Data Found'}}</h3>
+            <h1 class="text-8xl font-extrabold">{{ $home_pages->name ?? 'No Data Found'}}</h1>
 
             <!-- Typing animation section -->
             <div 
@@ -68,31 +68,22 @@
             </div>
 
             <p class="text-xl max-w-3xl font-semibold text-gray-300 leading-relaxed">
-                {{ $home_pages->description }}
+                {{ $home_pages->description ?? 'No Data Found' }}
             </p>            
 
             <!-- Button section -->
             <section class="w-full text-left">
-                <a href="/about" class="inline-block px-6 py-3 text-lg font-semibold bg-slate-200 text-black rounded-lg hover:bg-slate-400 transition">{{ $home_pages->button_page }}</a>
+                <a href="/about" class="inline-block px-6 py-3 text-lg font-semibold bg-slate-200 text-black rounded-lg hover:bg-slate-400 transition">{{ $home_pages->button_page ?? 'No Data Found' }}</a>
             </section>
         </div>
         
         <div class="lg:w-1/2 flex items-center justify-center">
             <div class="relative w-[500px] h-[500px] lg:w-[500px] lg:h-[500px] overflow-hidden rounded-full border-4 border-white">
-                <img src="{{ url('storage', $home_pages->images)  }}" alt="Profile Image" class="w-full h-full object-cover object-top">
+                <img src="{{ url('storage', $home_pages->images ?? 'No Data Found')  }}" alt="Profile Image" class="w-full h-full object-cover object-top">
                 
                 <div class="absolute inset-0 rounded-full border-2 border-white blur-md opacity-50"></div>
             </div>
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-
         
     </section>
 </div>

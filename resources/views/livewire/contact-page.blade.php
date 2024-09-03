@@ -38,7 +38,7 @@
                         }, 5);
                     "
                     class="invisible text-4xl font-bold text-white custom-font">
-                        {{ $title_page->contact_page_header }}
+                        {{ $title_page->contact_page_header ?? 'No Data Found'}}
                     </h1>
                 </a>
             </div>
@@ -46,12 +46,17 @@
     </div>
 
         <div class="flex flex-row flex-wrap justify-center gap-6">
+            @if($contact->isNotEmpty())
             @foreach ($contact as $contacts)
                 <a class="flex items-center h-16 gap-5 p-3 transition-all duration-200 bg-white border-2 cursor-pointer w-52 rounded-xl border-black-primary text-black-primary shadow-button-card hover:scale-105 hover:shadow-image-card" href="{{ $contacts->link }}">
                     {!! $contacts->icon_svg !!}
                     <p class="font-semibold">{{ $contacts->text_content }}</p>
                 </a>
             @endforeach
+            @else   
+            <h1 class="font-bold line-clamp-1 text-black-primary group-hover:line-clamp-2 text-white">No Data Found</h1>
+            @endif
+
         </div>
 
 
