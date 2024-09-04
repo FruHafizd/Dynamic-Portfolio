@@ -8,6 +8,9 @@ class Navbar extends Component
 {
     public function render()
     {
-        return view('livewire.partials.navbar');
+        $navbars = \App\Models\Navbar::first();
+        return view('livewire.partials.navbar',[
+            'navbar' => $navbars
+        ]);
     }
 }

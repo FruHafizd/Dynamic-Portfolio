@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             ProjectPage::class,
             ContactPageSeeder::class,
             TitlePagesSeeder::class,
+            NavbarSeeder::class,
         ]);
 
     }
