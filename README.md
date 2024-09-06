@@ -19,7 +19,7 @@
 - **HTML/CSS:** For building the structure and styling of the portfolio pages.
 - **JavaScript:** To enhance user interaction and add dynamic features.
 
-## :tools: Installation
+## 🔨 Installation
 
 1. **Clone the Repository:**
    ```bash
