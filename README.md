@@ -19,10 +19,49 @@
 - **HTML/CSS:** For building the structure and styling of the portfolio pages.
 - **JavaScript:** To enhance user interaction and add dynamic features.
 
-## 🛠️ Installation
-To get started with the project locally, follow these steps:
+## :tools: Installation
 
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/FruHafizd/Dynamic-Portfolio.git
    cd Dynamic-Portfolio
+   ```
+
+2. **Install Dependencies:**
+   Make sure you have [Composer](https://getcomposer.org/) installed, then run:
+   ```bash
+   composer install
+   ```
+
+3. **Set Up Environment:**
+   Copy the `.env.example` file to `.env` and update the environment variables as needed:
+   ```bash
+   cp .env.example .env
+   ```
+
+4. **Generate Application Key:**
+   ```bash
+   php artisan key:generate
+   ```
+
+5. **Run Migrations and Seeders:**
+   Set up your database in the `.env` file, then run the migrations and seeders:
+   ```bash
+   php artisan migrate --seed
+   ```
+
+6. **Install Node Dependencies (Optional):**
+   If your project uses frontend assets managed by Laravel Mix, install the node packages:
+   ```bash
+   npm install
+   npm run dev
+   ```
+
+7. **Serve the Application:**
+   Start the local development server:
+   ```bash
+   php artisan serve
+   ```
+
+8. **Access the Application:**
+   Open your browser and visit `http://localhost:8000` to see your portfolio in action.
