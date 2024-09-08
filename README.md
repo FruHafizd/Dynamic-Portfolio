@@ -32,7 +32,10 @@
    ```bash
    composer install
    ```
-
+   OR
+   ```bash
+   composer update
+   ```
 3. **Set Up Environment:**
    Copy the `.env.example` file to `.env` and update the environment variables as needed:
    ```bash
